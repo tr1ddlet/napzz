@@ -1,5 +1,4 @@
-
-name: Deploy Vue SPA to GitHub Pages
+name: Deploy Nuxt SPA to GitHub Pages
 
 on:
   push:
@@ -13,7 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -26,13 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build SPA
+        run: npm run generate
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: .output/public
 
   deploy:
     needs: build
