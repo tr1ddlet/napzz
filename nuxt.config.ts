@@ -2,14 +2,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   ssr: false,
   app: {
-    baseURL: '/napzz/'
+    baseURL: '/napzz/',
   },
-  vite: {
-    base: '/napzz/'
-  },
-  router: {
-    options: {
-      hashMode: true
-    }
-  }
+  vite: { base: '/napzz/' },
+  router: { options: { hashMode: true } }
 })
